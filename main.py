@@ -21,13 +21,13 @@ def view_tables():
     
     for schema, layer in zip(schema_names, layer_names):
         with st.expander(layer):   
-            cursor.execute(f"SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '{schema}' AND TABLE_TYPE = 'BASE TABLE'")
+            cursor.execute(f"SELECT [TABLE_NAME] FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '{schema}' AND TABLE_TYPE = 'BASE TABLE'")
             tables = [row.TABLE_NAME for row in cursor.fetchall()]
 
             selected_table = st.selectbox('Select a table', tables, key='select_'+schema) 
 
             if st.button('View selected table', key='button_'+schema): 
-                query = f"SELECT * FROM {schema}.{selected_table}"
+                query = f"SELECT * FROM {schema}.[{selected_table}]"
                 df = pd.read_sql(query, conn)
                 st.dataframe(df)
 
