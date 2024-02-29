@@ -7,6 +7,12 @@ This project utilizes the Northwind sample database as part of an ETL (Extract, 
 - Data Warehouse: We load the transformed data, tracking changes with SCD type 2.
 - Streamlit Python App: A web-based interface to view and interact with the Northwind database tables. Run procedures to load data, delete tables, and execute custom SQL queries.
 
+# Schema Structure for OLTP
+<img width="383" alt="OLTP" src="https://github.com/shibinashraf/northwind-dwproject/assets/28195524/51fb23c2-586c-4aa8-a04c-e94d9dccd216">
+
+# Schema Structure for Datawarehouse
+![61000136-a4dc6b80-a354-11e9-9ff2-ae97a9c6ac38](https://github.com/shibinashraf/northwind-dwproject/assets/28195524/b5f329c4-e600-470a-b447-d8fd46f6fedf)
+
 # Repository Structure
 
 - main.py : The streamlit app. Main file to be executed.
