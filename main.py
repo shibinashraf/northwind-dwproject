@@ -14,7 +14,7 @@ cursor = conn.cursor()
 print("Connected to the SQL Server.")
 
 
-# Define logic for each page
+
 def view_tables():
     schema_names = ['dbo', 'NW_LANDING', 'NW_STAGING', 'NW_DW']
     layer_names = ['OLTP', 'Landing Layer', 'Staging Layer', 'Data Warehouse Layer']
@@ -65,14 +65,14 @@ def oltp_update():
     if run_query:
         try:
             cursor.execute(sql_command)
-            # If SQL command is a SELECT statement, fetch the result and display it
+    
             if sql_command.lower().startswith('select'):
                 rows = cursor.fetchall()
-                # pandas to the rescue for pretty printing
+                # pandas to print the rows
                 data = pd.DataFrame.from_records(rows)
                 st.dataframe(data)
             else:
-                # if the command is not a SELECT statement, commit the transaction
+                # if the command is not a SELECT statement
                 conn.commit()
                 st.success("SQL executed successfully.")
         except Exception as e:
