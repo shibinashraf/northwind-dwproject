@@ -4,7 +4,7 @@ This project utilizes the Northwind sample database as part of an ETL (Extract, 
 
 # Repository Structure
 
-main.py : The streamlit app. Main file to be executed.
-requirements.txt: Required Python dependencies for the project.
-README.md: This file
-sqlfiles/: This directory contains stored procedures for the ETL process, such as data loading, all sql files are available in this folder.
+- main.py : The streamlit app. Main file to be executed.
+- requirements.txt: Required Python dependencies for the project.
+- README.md: This file
+- sqlfiles/: This directory contains stored procedures for the ETL process, such as data loading, all sql files are available in this folder.
